@@ -1,9 +1,12 @@
-jaspersoft-vjsdashboard
-=======================
+Dashboard Designer for JasperReports Server
+===========================================
 
 This is an example dashboard builder showcasing TIBCO Jaspersoft's new Visualize.js Framework. This framework allows users of JasperReport Server to easily write their own web applications that include resources from JRS. You can find more information about Visualize.js at http://community.jaspersoft.com/project/visualizejs
 
 You will need to use the commercial edition of Jaspersoft to be able to use Visualize.js. If you don't have that yet, you can download the Trial Edition at http://community.jaspersoft.com/download
+
+And this is how it looks like in action:
+![Screenshot](vjsDashboard.png)
 
 Configuration & Deployment
 --------------------------
