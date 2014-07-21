@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jaspersoft Visualize.js Dashboard</title>
+		<!-- has to be in the root folder, because the images folder has to be there -->
+        <link rel="stylesheet" href="jquery-ui.css">
+        <link rel="stylesheet" href="chosen.css">
+        <link rel="stylesheet" href="index.css">
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/jquery-ui.js"></script>
+        <script src="scripts/chosen.jquery.js"></script>
+        <script src="scripts/config.js"></script>
+        <script src="scripts/vjsDashboard.js"></script>
+    </head>
+    
+    <body>
+        <!-- Tabs -->
+        <div id="tabs">
+            <ul id="tabs-header">
+                <li id="addTab-li"><a id="addTab" class="addTab" href="#tabs-1"></a></li>
+				<li class="right"><button id="restore">Restore</button></li>
+				<li class="right"><button id="save">Save</button></li>
+				<li class="right" id="username"><label>User:</label><input type="text" value="default" /></li>
+            </ul>
+            <div id="gallery">
+                <h3>Reports</h3>
+            </div>
+            <div id="dashboard-container">
+			</div>
+        </div>
+    </body>
+</html>
