@@ -3,10 +3,12 @@ package com.jaspersoft.vjsdashboard;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -54,6 +56,8 @@ public class DashboardSaver extends HttpServlet{
 		String json = request.getParameter("json");
 		
 		try {
+			createTableIfNotExists();
+			
 			PreparedStatement deleteSt = connection.prepareStatement("DELETE FROM " + dbTableName + " WHERE username = ?");
 			deleteSt.setString(1, username);
 			deleteSt.executeUpdate();
@@ -64,6 +68,18 @@ public class DashboardSaver extends HttpServlet{
 			insertSt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+	}
+
+	private void createTableIfNotExists() throws SQLException {
+		DatabaseMetaData metaData = connection.getMetaData();
+		ResultSet rs = metaData.getTables(null, null, dbTableName, null);
+		
+		boolean noRows = !rs.first();
+		if (noRows) {
+			String createTableSql = "CREATE TABLE " + dbTableName + " (username varchar(20), json text)";
+			Statement statement = connection.createStatement();
+			statement.execute(createTableSql);
 		}
 	}
 
