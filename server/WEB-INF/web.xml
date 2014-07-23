@@ -33,7 +33,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 		</init-param>
             	
 		<init-param>
-			<!-- Database table to use, must have columns "username" and "json" -->
+			<!-- Database table to use, will be automatically created -->
 			<param-name>dbTableName</param-name>
 			<param-value>arrangement</param-value>
 		</init-param>
