@@ -8,6 +8,16 @@ You will need to use the commercial edition of Jaspersoft to be able to use Visu
 And this is how it looks like in action:
 ![Screenshot](vjsDashboard.png)
 
+Features
+--------
+
+- Drag & Drop reports onto a dashboard, then move & resize them at will
+   - Note: You can have several instances of the same report on a dashboard and then set different input parameter values for them (see below).
+- Create several tabs, each with its own dashboard
+- Set values for report input parameters (click the 'Y' in the report header)
+   - Note: As of now, not all input parameter types are supported.
+- Save and restore the current state of *all* dashboards (including report input parameters)
+
 Configuration & Deployment
 --------------------------
 
@@ -23,7 +33,7 @@ To get everything up and running follow these simple steps:
 2. Create two folders in `<js-install>/apache-tomcat/webapps`: `vjsdashboard` and `dashboardsaver`.
 3. Copy the contents of `client/` into `vjsdashboard`.
 4. Copy the contents of `server/` into `dashboardsaver`.
-5. Adjust the two configuration files if necessary:
+5. **Take a look at the two configuration files, and adjust the values if necessary:**
     - For the client: `vjsdashboard/scripts/config.js`
     - For the server: `dashboardsaver/WEB-INF/web.xml`
 6. Restart JasperReports Server
